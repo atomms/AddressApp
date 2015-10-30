@@ -120,7 +120,7 @@ public class PersonOverviewController {
 	    if (selectedIndex >= 0) {
 	        personTable.getItems().remove(selectedIndex);
 	    } else {
-	        // Nothing selected.
+	        // Nothing selected
 	        Dialogs.create()
 	            .title("No Selection")
 	            .masthead("No Person Selected")
