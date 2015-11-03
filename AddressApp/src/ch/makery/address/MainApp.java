@@ -2,6 +2,8 @@ package ch.makery.address;
 
 import java.io.IOException;
 
+import com.sun.prism.Image;
+
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -58,6 +60,7 @@ public ObservableList<Person> getPersonData() {
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("AddressApp");
+//        this.primaryStage.getIcons().add(new Image("file:/resources/images/ic_contacts_black_24dp.png"));
 
         initRootLayout();
 
