@@ -22,6 +22,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import ch.makery.address.model.Person;
 import ch.makery.address.model.PersonListWrapper;
+import ch.makery.address.view.BirthdayStatisticsController;
 import ch.makery.address.view.PersonEditDialogController;
 import ch.makery.address.view.PersonOverviewController;
 import ch.makery.address.view.RootLayoutController;
@@ -265,6 +266,33 @@ public ObservableList<Person> getPersonData() {
                     .showException(e);
         }
     }  
+    
+    /**
+     * Opens a dialog to show birthday statistics.
+     */
+    public void showBirthdayStatistics() {
+        try {
+            // Load the fxml file and create a new stage for the popup.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/BirthdayStatistics.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Birthday Statistics");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            // Set the persons into the controller.
+            BirthdayStatisticsController controller = loader.getController();
+            controller.setPersonData(personData);
+
+            dialogStage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     
 	/**
 	 * Returns the main stage.
