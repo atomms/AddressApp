@@ -25,7 +25,7 @@
                      <children>
                         <ImageView pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                            <image>
-                              <Image url="@../../../../../../../../Documentos/MisDocumentos/UEM/DI/recursos/hierba-footer.png" />
+                              <Image url="@../../../../../resources/images/hierba-footer.png" />
                            </image>
                         </ImageView>
                      </children>
