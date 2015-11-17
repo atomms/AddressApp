@@ -9,26 +9,10 @@
         <street>some street</street>
     </person>
     <person>
-        <birthday>1999-02-21</birthday>
+        <birthday>1999-01-21</birthday>
         <city>some city</city>
         <firstName>Ruth</firstName>
         <lastName>Mueller</lastName>
-        <postalCode>1234</postalCode>
-        <street>some street</street>
-    </person>
-    <person>
-        <birthday>1999-02-21</birthday>
-        <city>some city</city>
-        <firstName>Heinz</firstName>
-        <lastName>Kurz</lastName>
-        <postalCode>1234</postalCode>
-        <street>some street</street>
-    </person>
-    <person>
-        <birthday>1999-02-21</birthday>
-        <city>some city</city>
-        <firstName>Cornelia</firstName>
-        <lastName>Meier</lastName>
         <postalCode>1234</postalCode>
         <street>some street</street>
     </person>
@@ -57,7 +41,7 @@
         <street>some street</street>
     </person>
     <person>
-        <birthday>1999-02-21</birthday>
+        <birthday>1999-09-21</birthday>
         <city>some city</city>
         <firstName>Stefan</firstName>
         <lastName>Meier</lastName>
@@ -65,7 +49,7 @@
         <street>some street</street>
     </person>
     <person>
-        <birthday>1999-02-21</birthday>
+        <birthday>1999-09-21</birthday>
         <city>some city</city>
         <firstName>Martin</firstName>
         <lastName>Mueller</lastName>

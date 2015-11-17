@@ -2,6 +2,7 @@ package ch.makery.address.view;
 
 import java.io.File;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.stage.FileChooser;
 
@@ -124,4 +125,5 @@ public class RootLayoutController {
     private void handleShowBirthdayStatistics() {
       mainApp.showBirthdayStatistics();
     }
+
 }
