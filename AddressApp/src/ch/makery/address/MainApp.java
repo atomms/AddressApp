@@ -8,7 +8,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-import org.controlsfx.dialog.Dialogs;
+//import org.controlsfx.dialog.Dialogs;
 
 import javafx.scene.image.*;
 import javafx.application.Application;
@@ -26,6 +26,13 @@ import ch.makery.address.view.BirthdayStatisticsController;
 import ch.makery.address.view.PersonEditDialogController;
 import ch.makery.address.view.PersonOverviewController;
 import ch.makery.address.view.RootLayoutController;
+
+/**
+ * my version of <b>AddressApp</b> wit a little tuning
+ * @version 0.9
+ * @author ernesto
+ * @see RootLayoutController
+ */
 
 public class MainApp extends Application {
 
@@ -58,7 +65,7 @@ public MainApp() {
 
 /**
  * Returns the data as an observable list of Persons. 
- * @return
+ * 
  */
 public ObservableList<Person> getPersonData() {
     return personData;
@@ -136,14 +143,7 @@ public ObservableList<Person> getPersonData() {
     }
     
     //ADDED
-    /**
-     * Opens a dialog to edit details for the specified person. If the user
-     * clicks OK, the changes are saved into the provided person object and true
-     * is returned.
-     * 
-     * @param person the person object to be edited
-     * @return true if the user clicked OK, false otherwise.
-     */
+
     public boolean showPersonEditDialog(Person person) {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
@@ -178,7 +178,7 @@ public ObservableList<Person> getPersonData() {
      * The preference is read from the OS specific registry. If no such
      * preference can be found, null is returned.
      * 
-     * @return
+     * 
      */
     public File getPersonFilePath() {
         Preferences prefs = Preferences.userNodeForPackage(MainApp.class);
@@ -214,7 +214,7 @@ public ObservableList<Person> getPersonData() {
      * Loads person data from the specified file. The current person data will
      * be replaced.
      * 
-     * @param file
+     * 
      */
     public void loadPersonDataFromFile(File file) {
         try {
@@ -232,17 +232,17 @@ public ObservableList<Person> getPersonData() {
             setPersonFilePath(file);
 
         } catch (Exception e) { // catches ANY exception
-            Dialogs.create()
-                    .title("Error")
-                    .masthead("Could not load data from file:\n" + file.getPath())
-                    .showException(e);
+//            Dialogs.create()
+//                    .title("Error")
+//                    .masthead("Could not load data from file:\n" + file.getPath())
+//                    .showException(e);
         }
     }
 
     /**
      * Saves the current person data to the specified file.
      * 
-     * @param file
+     * 
      */
     public void savePersonDataToFile(File file) {
         try {
@@ -261,9 +261,9 @@ public ObservableList<Person> getPersonData() {
             // Save the file path to the registry.
             setPersonFilePath(file);
         } catch (Exception e) { // catches ANY exception
-            Dialogs.create().title("Error")
-                    .masthead("Could not save data to file:\n" + file.getPath())
-                    .showException(e);
+//            Dialogs.create().title("Error")
+//                    .masthead("Could not save data to file:\n" + file.getPath())
+//                    .showException(e);
         }
     }  
     
@@ -296,7 +296,7 @@ public ObservableList<Person> getPersonData() {
     
 	/**
 	 * Returns the main stage.
-	 * @return
+	 * 
 	 */
 	public Stage getPrimaryStage() {
 		return primaryStage;
