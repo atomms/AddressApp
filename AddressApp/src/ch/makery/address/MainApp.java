@@ -150,6 +150,7 @@ public ObservableList<Person> getPersonData() {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/PersonEditDialog.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
+            
 
             // Create the dialog Stage.
             Stage dialogStage = new Stage();
@@ -158,6 +159,7 @@ public ObservableList<Person> getPersonData() {
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
+            dialogStage.setResizable(false);
 
             // Set the person into the controller.
             PersonEditDialogController controller = loader.getController();
