@@ -8,6 +8,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.stage.StageStyle;
 import ch.makery.address.MainApp;
 import ch.makery.address.model.Person;
 import ch.makery.address.util.DateUtil;
@@ -111,7 +112,7 @@ public class PersonOverviewController {
 //	 * Called when the user clicks on the delete button.
 //	 */
 //	@FXML
-//	private void handleDeleteOld() {
+//	private void handleDeletePerson() {
 //	    int selectedIndex = personTable.getSelectionModel().getSelectedIndex();
 ////	    personTable.getItems().remove(selectedIndex);
 //	    
@@ -130,7 +131,7 @@ public class PersonOverviewController {
 //	}
 	
     /**
-     * Handle clik on delete with no row selected
+     * Handle click on delete with no row selected
      * 
      */
     @FXML
@@ -139,8 +140,11 @@ public class PersonOverviewController {
     if (selectedIndex >= 0) { personTable.getItems().remove(selectedIndex); }
     else {
     	// Nothing selected.
-    	Alert alert = new Alert(AlertType.INFORMATION); alert.setTitle("Warning"); alert.setHeaderText("No person to delete"); alert.setContentText("Please select a row");
-    	 alert.showAndWait(); }
+    	Alert alert = new Alert(AlertType.WARNING);
+    	alert.setTitle("Warning");
+    	alert.setHeaderText("No person to delete");
+    	alert.setContentText("Please select a row");
+    	alert.showAndWait();}
     }
 	
 	/**
@@ -170,13 +174,13 @@ public class PersonOverviewController {
 	        }
 
 	    } else {
-	        // Nothing selected.
-	        Dialogs.create()
-	            .title("No Selection")
-	            .masthead("No Person Selected")
-	            .message("Please select a person in the table.")
-	            .showWarning();
-	    }
+	    	// Nothing selected.
+	    	Alert alert = new Alert(AlertType.WARNING);
+	    	alert.setTitle("Warning");
+	    	alert.setHeaderText("No person to edit");
+	    	alert.setContentText("Please select a row");
+	    	alert.showAndWait();}
+	    
 	}
 	
 }
