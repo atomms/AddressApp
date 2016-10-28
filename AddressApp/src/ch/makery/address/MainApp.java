@@ -100,9 +100,9 @@ public ObservableList<Person> getPersonData() {
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
             
-          // Give the controller access to the main app.
-          RootLayoutController controller = loader.getController();
-          controller.setMainApp(this);
+//          // Give the controller access to the main app.
+//          RootLayoutController controller = loader.getController();
+//          controller.setMainApp(this);
             
             
             primaryStage.show();
