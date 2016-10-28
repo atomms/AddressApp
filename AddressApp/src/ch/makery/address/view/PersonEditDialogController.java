@@ -1,6 +1,7 @@
 package ch.makery.address.view;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -102,6 +103,8 @@ public class PersonEditDialogController {
     private void handleCancel() {
         dialogStage.close();
     }
+
+
 
     /**
      * Validates the user input in the text fields.
