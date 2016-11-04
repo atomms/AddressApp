@@ -99,7 +99,8 @@ public ObservableList<Person> getPersonData() {
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
-            
+            scene.getStylesheets().add("http://fonts.googleapis.com/css?family=Shadows+Into+Light");
+                       
 //          // Give the controller access to the main app.
 //          RootLayoutController controller = loader.getController();
 //          controller.setMainApp(this);
