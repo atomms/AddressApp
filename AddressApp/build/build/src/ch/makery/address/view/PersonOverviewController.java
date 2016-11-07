@@ -3,9 +3,12 @@ package ch.makery.address.view;
 import org.controlsfx.dialog.Dialogs;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.stage.StageStyle;
 import ch.makery.address.MainApp;
 import ch.makery.address.model.Person;
 import ch.makery.address.util.DateUtil;
@@ -41,10 +44,7 @@ public class PersonOverviewController {
 	public PersonOverviewController() {
 	}
 
-	/**
-	 * Initializes the controller class. This method is automatically called
-	 * after the fxml file has been loaded.
-	 */
+
 	@FXML
 	private void initialize() {
 		// Initialize the person table with the two columns.
@@ -108,28 +108,44 @@ public class PersonOverviewController {
 			birthdayLabel.setText("");
 		}
 	}
-	/**
-	 * Called when the user clicks on the delete button.
-	 */
-	@FXML
-	private void handleDeletePerson() {
-	    int selectedIndex = personTable.getSelectionModel().getSelectedIndex();
-//	    personTable.getItems().remove(selectedIndex);
-	    
-	    //ADDED
-	    if (selectedIndex >= 0) {
-	        personTable.getItems().remove(selectedIndex);
-	    } else {
-	        // Nothing selected
-	        Dialogs.create()
-	            .title("No Selection")
-	            .masthead("No Person Selected")
-	            .message("Please select a person in the table.")
-	            .showWarning();
-	    }
+//	/**
+//	 * Called when the user clicks on the delete button.
+//	 */
+//	@FXML
+//	private void handleDeletePerson() {
+//	    int selectedIndex = personTable.getSelectionModel().getSelectedIndex();
+////	    personTable.getItems().remove(selectedIndex);
+//	    
+//	    //ADDED
+//	    if (selectedIndex >= 0) {
+//	        personTable.getItems().remove(selectedIndex);
+//	    } else {
+//	        // Nothing selected
+//	        Dialogs.create()
+//	            .title("No Selection")
+//	            .masthead("No Person Selected")
+//	            .message("Please select a person in the table.")
+//	            .showWarning();
+//	    }
+//	
+//	}
 	
-	
-	}
+    /**
+     * Handle click on delete with no row selected
+     * 
+     */
+    @FXML
+    private void handleDeletePerson() {
+    	int selectedIndex = personTable.getSelectionModel().getSelectedIndex();
+    if (selectedIndex >= 0) { personTable.getItems().remove(selectedIndex); }
+    else {
+    	// Nothing selected.
+    	Alert alert = new Alert(AlertType.WARNING);
+    	alert.setTitle("Warning");
+    	alert.setHeaderText("No person to delete");
+    	alert.setContentText("Please select a row");
+    	alert.showAndWait();}
+    }
 	
 	/**
 	 * Called when the user clicks the new button. Opens a dialog to edit
@@ -158,13 +174,13 @@ public class PersonOverviewController {
 	        }
 
 	    } else {
-	        // Nothing selected.
-	        Dialogs.create()
-	            .title("No Selection")
-	            .masthead("No Person Selected")
-	            .message("Please select a person in the table.")
-	            .showWarning();
-	    }
+	    	// Nothing selected.
+	    	Alert alert = new Alert(AlertType.WARNING);
+	    	alert.setTitle("Warning");
+	    	alert.setHeaderText("No person to edit");
+	    	alert.setContentText("Please select a row");
+	    	alert.showAndWait();}
+	    
 	}
 	
 }

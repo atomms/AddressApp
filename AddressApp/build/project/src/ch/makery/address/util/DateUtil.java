@@ -32,15 +32,7 @@ public class DateUtil {
         return DATE_FORMATTER.format(date);
     }
 
-    /**
-     * Converts a String in the format of the defined {@link DateUtil#DATE_PATTERN} 
-     * to a {@link LocalDate} object.
-     * 
-     * Returns null if the String could not be converted.
-     * 
-     * @param dateString the date as String
-     * @return the date object or null if it could not be converted
-     */
+
     public static LocalDate parse(String dateString) {
         try {
             return DATE_FORMATTER.parse(dateString, LocalDate::from);
